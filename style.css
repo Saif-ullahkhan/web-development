@@ -1,0 +1,46 @@
+div {
+    box-sizing: content-box;
+    width: 95%;
+    padding: 16px;
+    margin: 20px auto;
+    border: 5px solid #f0ebeb;
+    /* background-color: rgb(219, 215, 209); */
+
+  }
+
+  header{
+    box-sizing: content-box;
+    border:5px rgb(145, 59, 50);
+  }
+
+  .header-nav{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    background-color: #aca2a2;
+  }
+
+  .nav-link {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: none;
+    color:black;
+    padding: 5px;
+    
+
+  }
+  .portfolio{
+    text-align: center;
+    font-size: 50px ;
+  }
+  .profile-name{
+    h1{
+        text-align: center;
+    }
+    p{
+
+        text-align: center;
+    }
+
+}
