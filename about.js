@@ -69,3 +69,51 @@ function Students(){
 }
 
 Students();
+
+// var myVar = "this is global scope - Var";
+
+function varibleScope(){
+    if (true){
+        // console.log(myVar)
+        const myVar = "this is block scope";
+        console.log(myVar);
+    }
+
+}
+
+varibleScope();
+
+// console.log(myVar);
+
+
+function practiceLoops(){
+    const fruits = ["apple", "banana", "cherry"];
+    for (let i = 0; i < fruits.length; i++) {
+    console.log(`I love ${fruits[i]}`);
+    }
+    function for_inLoop(){
+        user = {
+            name : "saif",
+            Id : 21,
+            age: 24,
+            Interests : "swimming, gym , jerking"
+        };
+
+        for (let key in user){
+            console.log(user[key]);
+        }
+   }
+
+   for_inLoop();
+}
+practiceLoops();
+
+function myCounter(){
+    counterElement = document.getElementById("#");
+    counterElement.addEventListener('click', ()=> {
+        let counter = 0;
+        counter
+    }
+)
+
+}
