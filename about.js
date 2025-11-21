@@ -109,11 +109,15 @@ function practiceLoops(){
 practiceLoops();
 
 function myCounter(){
-    counterElement = document.getElementById("#");
+    displayCounter = document.getElementById("dis-counter");
+    counterElement = document.getElementById("counter-btn");
+    let counter = 0;
     counterElement.addEventListener('click', ()=> {
-        let counter = 0;
-        counter
+        counter +=1;
+
+        displayCounter.textContent = counter;
     }
-)
+);
 
 }
+myCounter();
