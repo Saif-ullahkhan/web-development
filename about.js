@@ -108,16 +108,45 @@ function practiceLoops(){
 }
 practiceLoops();
 
-function myCounter(){
-    displayCounter = document.getElementById("dis-counter");
-    counterElement = document.getElementById("counter-btn");
-    let counter = 0;
-    counterElement.addEventListener('click', ()=> {
-        counter +=1;
+// function myCounter(){
+//     displayCounter = document.getElementById("dis-counter");
+//     counterElement = document.getElementById("counter-btn");
+//     let counter = 0;
+//     counterElement.addEventListener('click', ()=> {
+//         counter +=1;
+//         displayCounter.textContent = counter;
+//     }
+// );
 
-        displayCounter.textContent = counter;
-    }
-);
+// }
+// myCounter();
+
+function eventEx(){
+
+    const parnetdiv = document.querySelector("#counter-container")
+    const childdiv = document.querySelector("#counter")
+    const btn = document.querySelector("#counter-btn")
+    const para = document.querySelector("#dis-counter")
+
+
+    parnetdiv.addEventListener('click',()=>{
+        alert("This is parent");
+
+    })
+    childdiv.addEventListener('click',(e)=>{
+        alert("This is child" + e.currentTarget);
+
+    })
+    para.addEventListener('click',(e)=>{
+        alert("This is para"+ e.currentTarget);
+
+    })
+    btn.addEventListener('click',(e)=>{
+        alert("This is button" + e.currentTarget );
+
+    })
+
 
 }
-myCounter();
+
+eventEx();
