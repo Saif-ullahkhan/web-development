@@ -96,7 +96,7 @@ function practiceLoops(){
             name : "saif",
             Id : 21,
             age: 24,
-            Interests : "swimming, gym , jerking"
+            Interests : "swimming, gym "
         };
 
         for (let key in user){
@@ -129,24 +129,77 @@ function eventEx(){
     const para = document.querySelector("#dis-counter")
 
 
-    parnetdiv.addEventListener('click',()=>{
-        alert("This is parent");
+    parnetdiv.addEventListener('click',(e)=>{
+        // e.stopPropagation();
+        alert("This is parent" + e.currentTarget.tagName);
 
-    })
+    },);
     childdiv.addEventListener('click',(e)=>{
-        alert("This is child" + e.currentTarget);
+        // e.stopPropagation();
+        alert("This is child" + e.currentTarget.tagName);
 
-    })
+    });
     para.addEventListener('click',(e)=>{
-        alert("This is para"+ e.currentTarget);
+        alert("This is para"+ e.currentTarget.tagName);
 
-    })
+    });
     btn.addEventListener('click',(e)=>{
-        alert("This is button" + e.currentTarget );
+        // e.stopPropagation();
+        alert("This is button" + e.currentTarget.tagName);
 
-    })
+    });
 
 
 }
 
 eventEx();
+
+function newEvent(){
+    const list = document.querySelector("#item-list");
+    const newItem = document.createElement('li');
+    newItem.classList.add("list-item");
+    newItem.textContent = "new item";
+
+    list.prepend(newItem);
+
+    const btn = document.querySelector("#btn");
+    btn.addEventListener('click',()=>{
+        list.removeChild(list.children[0]);
+    })
+
+    
+    list.addEventListener('click', (event) => {
+ // Check if the clicked element is an li
+    if (event.target.tagName === 'LI') {
+    event.target.textContent = "Clicked!";
+ }
+});
+
+}
+
+newEvent();
+
+
+//synchronous VS asynchronous javascript;
+
+console.log('Task 1');
+console.log('Task 3');
+setTimeout((e) => { 
+    console.log(e);
+    console.log("this is async function");
+}, 3000);
+
+console.log("start");
+
+setTimeout(()=>{
+    console.log("CB set timeout")
+}, 5000);
+
+fetch("https://api.netflix.com").then(function cbF(){
+    console.log("CB netflix");
+});
+
+console.log("END");
+
+
+
