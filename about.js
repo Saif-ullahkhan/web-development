@@ -182,24 +182,99 @@ newEvent();
 
 //synchronous VS asynchronous javascript;
 
-console.log('Task 1');
-console.log('Task 3');
-setTimeout((e) => { 
-    console.log(e);
-    console.log("this is async function");
-}, 3000);
+// console.log('Task 1');
+// console.log('Task 3');
+// setTimeout((e) => { 
+//     console.log(e);
+//     console.log("this is async function");
+// }, 3000);
 
-console.log("start");
+// console.log("start");
 
-setTimeout(()=>{
-    console.log("CB set timeout")
-}, 5000);
+// setTimeout(()=>{
+//     console.log("CB set timeout")
+// }, 5000);
 
-fetch("https://api.netflix.com").then(function cbF(){
-    console.log("CB netflix");
+// fetch("https://api.netflix.com").then(function cbF(){
+//     console.log("CB netflix");
+// });
+
+// console.log("END");
+
+
+function doSomething(callback){
+    console.log("Doing something:")
+    callback();
+    
+}
+
+function mycallback(){
+    console.log("callback executed..");
+}
+
+doSomething(mycallback);
+
+
+function greetUser(name,callback){
+    console.log("Welcome," + name);
+    callback();
+}
+
+function logIn(){
+    console.log("User loggedIn!");
+}
+
+greetUser("saif",logIn);
+
+function delayedMessage(message,callback){
+
+    const m = setTimeout(() => {
+        console.log("Message: ", message);
+        callback();
+    }, 2000);
+    
+
+}
+
+function D(){
+    console.log("Done!");
+}
+
+delayedMessage("Hello world",D);
+
+
+function checkAge(age,success,error){
+    if (age>= 18){
+
+        success();
+
+    }else{
+
+        error();
+
+    }
+    
+}
+
+checkAge(20, 
+    () => console.log("Allowed"),
+    () => console.log("Not allowed")
+);
+
+
+function fetchData(callback){
+    setTimeout(() => {
+        
+        const data = {
+            username: "king",
+            Id: 23
+        };
+    callback(data);
+    }, 1500);
+}
+
+console.log("fetching data..");
+
+fetchData((userData)=>{
+    console.log("Recieved Data:",userData);
 });
-
-console.log("END");
-
-
-
